@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a demo site built for the From Scratch webdev challenge">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./styles.css">
+    <title>The Band - Challenge 1 | Brian Yao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+<body>
+    <header class="header-container">
+        <nav>
+            <h1 id="logo">Logo</h1>
+            <ul class="nav-links">
+                <li><a href="./index.html" class="main-nav">Home</a></li>
+                <li><a href="#band" class="main-nav">Band</a></li>
+                <li><a href="#tour" class="main-nav">Tour</a></li>
+                <li><a href="#contact" class="main-nav">Contact</a></li>
+                <!-- <li><a href="#more">More<i class="fas fa-sort-down" style="color:white; cursor: pointer;display: inline;"></i></a></li> -->
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="useDropdown()">More
+                            <i class="fas fa-sort-down"></i>
+                        </button>
+                        <div class="dropdown-content" id="myDropdown">
+                            <a href="#">Merchandise</a>
+                            <a href="#">Extras</a>
+                            <a href="#">Media</a>
+                        </div> 
+                    </div>
+                </li>
+                <li><i class="fas fa-search" style="color:white; cursor: pointer;"></i></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="main-page">
+            <div class="carousel-container">
+                <div class="img-slide fade">
+                    <h2>New York</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="img-slide fade">
+                    <h2>Chicago</h2>
+                    <p>Thank you, Chicago - A night we won't forget.</p>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="img-slide fade">
+                    <h2>LA</h2>
+                    <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </section>
+        <section id="band">
+            <div class="band-container">
+                <h3>The Band</h3>
+                <h4>We love music!</h4>
+                <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="member-gallery">
+                    <div class="member-profile">
+                        <p>Name</p>
+                        <img id ="photo1" src="./img/bandmember.jpg" alt="profile-picture">
+                        <div class="caption">
+                            <p>Guitarist and Lead Vocalist<br>Loves long walks on the beach<br>Member since 1988</p>
+                        </div>
+                    </div>
+                    <div class="member-profile">
+                        <p>Name</p>
+                        <img id ="photo2" src="./img/bandmember.jpg" alt="profile-picture">
+                        <div class="caption">
+                            <p>Drummer<br>Loves drummin'<br>Member since 1988</p>
+                        </div>
+                    </div>
+                    <div class="member-profile">
+                        <p>Name</p>
+                        <img id ="photo3" src="./img/bandmember.jpg" alt="profile-picture">
+                        <div class="caption">
+                            <p>Bass player<br>Loves math<br>Member since 2005</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="tour">
+            <div class="tour-container">
+                <h3>Tour Dates</h3>
+                <p><em>Lorem ipsum we'll play you some music.<br>Remember to book your tickets!
+                </em></p>
+                <ul>
+                    <li class="box">September <span class="red-label">Sold Out!</span></li>
+                    <li class="box">October <span class="red-label">Sold Out!</span></li>
+                    <li class="box">November<span class="random-number">3</span></li>
+                </ul>
+                <div class="location-gallery">
+                    <div class="thumbnail">
+                        <img src="./img/paris.jpg" alt="">
+                        <h4>Paris</h4>
+                        <p>Friday 27 November 2015</p>
+                        <button class="btn">Buy Tickets</button>
+                    </div>
+                    <div class="thumbnail">
+                        <img src="./img/newyork.jpg" alt="">
+                        <h4>New York</h4>
+                        <p>Saturday 28 November 2015</p>
+                        <button class="btn">Buy Tickets</button>
+                    </div>
+                    <div class="thumbnail">
+                        <img src="./img/sanfran.jpg" alt="">
+                        <h4>San Francisco</h4>
+                        <p>Sunday 29 November 2015</p>
+                        <button class="btn">Buy Tickets</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <h4>We love our fans!</h4>
+            <div class="contact-us">
+                <div class="contact-info">
+                    <p>Fan? Drop a note.</p>
+                    <div class="location-info">
+                        <i class="fas fa-map-marker-alt"></i><p>&nbsp;Chicago, US</p>
+                    </div>
+                    <div class="phone-info">
+                        <i class="fas fa-mobile-alt"></i><p>&nbsp;Phone: +00 1515151515</p>
+                    </div>
+                    <div class="email-info">
+                        <i class="fas fa-envelope-square"></i><p>&nbsp;E-mail: mail@mail.com</p>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <input type="text" placeholder="Name">
+                    <input type="email" name="email" placeholder="Email">
+                    <textarea name="message" placeholder="Comment" cols="30" rows="5"></textarea>
+                    <button type="submit">Send</button>
+                </div>
+            </div>
+        </section>
+        <div class="blog-box">
+            <h2>From the blog</h2>
+            <div class="blog-content">
+                <ul class="bloggers">
+                    <li>Mike</li>
+                    <li>Chandler</li>
+                    <li>Peter</li>
+                </ul>
+            </div>
+            <div id="blurb-container">
+                <div class="blurb hidden">
+                    <h5>Mike Ross, Manager</h5>
+                    <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
+                </div>
+                <div class="blurb hidden">
+                    <h5>Chandler Bing, Guitarist</h5>
+                    <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
+                </div>
+                <div class="blurb hidden">
+                    <h5>Peter Griffin, Bass player</h5>
+                    <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
+                </div>
+            </div>
+        </div>
+        <img class="map-image" src="./img/map.jpg" alt="">
+    </main>
+    <footer>
+        <p class="tooltip">
+            <span class="tooltiptext">TO TOP</span>
+            <i class="arrow up"></i>
+        </p>
+        <h4>From Scratch Challenge<br>BYAO 2020</h4>
+    </footer>
+    <script src="./app.js"></script>
+</body>
+</html>
