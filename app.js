@@ -4,6 +4,9 @@ const tooltip = document.querySelector('.tooltip');
 const blogger = document.querySelector('.bloggers');
 const blurbContainer = document.querySelector('#blurb-container');
 const carouselContainer = document.querySelector('.carousel-container');
+let profileImage1 = document.querySelector('#photo1');
+let profileImage2 = document.querySelector('#photo2');
+let profileImage3 = document.querySelector('#photo3');
 
 //event listeners
 tooltip.addEventListener("click", function() {
@@ -12,6 +15,9 @@ tooltip.addEventListener("click", function() {
 
 blogger.addEventListener("click", changeBlogger);
 
+profileImage1.addEventListener("click", toggleDiv);
+profileImage2.addEventListener("click", toggleDiv);
+profileImage3.addEventListener("click", toggleDiv);
 
 //functions 
 function scrollToTop (duration) {
@@ -90,18 +96,6 @@ showSlides(slideIndex);
 // Next/previous controls
 function plusSlides(n) {
     showSlides(slideIndex += n);
-    // switch (n) {
-    //     case 1: 
-    //         carouselContainer.style.background = "url('./img/ny.jpg')"
-    //         break;
-    //     case 2: 
-    //         carouselContainer.style.background = "url('./img/chicago.jpg')"
-    //         break;
-    //     case 3: 
-    //         carouselContainer.style.background = "url('./img/la.jpg')"
-    //         break;
-    // }
-    // console.log(n);
 }
 
 // Thumbnail image controls
@@ -110,46 +104,66 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("img-slide");
-    var dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) {
-      slideIndex = 1
-    }
-
-    if (n < 1) {
-      slideIndex = slides.length
-    }
-
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active-dot", "");
-    }
-
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active-dot";
-    switch (slideIndex) {
-        case 1: 
-            carouselContainer.style.background = "url('./img/ny.jpg')";
-            carouselContainer.style.backgroundRepeat = "repeat-y"; 
-            carouselContainer.style.backgroundSize = "cover";
-            carouselContainer.style.backgroundPosition = "center";
-            break;
-        case 2: 
-            carouselContainer.style.background = "url('./img/chicago.jpg')";
-            carouselContainer.style.backgroundRepeat = "repeat-y"; 
-            carouselContainer.style.backgroundSize = "cover";
-            carouselContainer.style.backgroundPosition = "center";
-            break;
-        case 3: 
-            carouselContainer.style.background = "url('./img/la.jpg')";
-            carouselContainer.style.backgroundRepeat = "repeat-y"; 
-            carouselContainer.style.backgroundSize = "cover";
-            carouselContainer.style.backgroundPosition = "center";
-            break;
-    }
+  let i;
+  let slides = document.getElementsByClassName("img-slide");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1
+  }
+  if (n < 1) {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active-dot", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active-dot";
+  switch (slideIndex) {
+    case 1: 
+      carouselContainer.style.background = "url('./img/ny.jpg')";
+      carouselContainer.style.backgroundRepeat = "repeat-y"; 
+      carouselContainer.style.backgroundSize = "cover";
+      carouselContainer.style.backgroundPosition = "center";
+      break;
+    case 2: 
+      carouselContainer.style.background = "url('./img/chicago.jpg')";
+      carouselContainer.style.backgroundRepeat = "repeat-y"; 
+      carouselContainer.style.backgroundSize = "cover";
+      carouselContainer.style.backgroundPosition = "center";
+      break;
+    case 3: 
+    carouselContainer.style.background = "url('./img/la.jpg')";
+    carouselContainer.style.backgroundRepeat = "repeat-y"; 
+    carouselContainer.style.backgroundSize = "cover";
+    carouselContainer.style.backgroundPosition = "center";
+    break;
+  }
 } 
+
+function toggleDiv() {
+  let profile1 = profileImage1.parentElement;
+  let profile2 = profileImage2.parentElement;
+  let profile3 = profileImage3.parentElement;
+  let caption1 = profile1.children[2];
+  let caption2 = profile2.children[2];
+  let caption3 = profile3.children[2];
+
+  if (caption1.style.display === "none") {
+    caption1.style.display = "block";
+  } else {
+    caption1.style.display = "none";
+  }
+  if (caption2.style.display === "none") {
+    caption2.style.display = "block";
+  } else {
+    caption2.style.display = "none";
+  }
+  if (caption3.style.display === "none") {
+    caption3.style.display = "block";
+  } else {
+    caption3.style.display = "none";
+  }
+}

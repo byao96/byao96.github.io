@@ -298,13 +298,13 @@ nav h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1 1 20rem;
+  flex: 1 1 16rem;
 }
 
 .member-profile img {
   border-radius: 50%;
   width: 60%;
-  height: auto;
+  max-height: 40%;
   cursor: pointer;
   margin-bottom: 2rem;
 }
